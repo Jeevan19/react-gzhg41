@@ -27,7 +27,6 @@ ul {
 
 .container,
 .container-fluid {
-  width: 100%;
   padding: 15px 15px;
   margin-right: auto;
   margin-left: auto;
@@ -88,22 +87,148 @@ nav a:hover {
   text-decoration-thickness: 10px;
 }
 
-@media (min-width: 576px) {
-  .logo > img {
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.logo {
+  margin-left: 115px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.bg-grey {
+  background-color: lightgrey;
+}
+
+.py-20 {
+  padding: 20px 0px;
+}
+
+form {
+  color: #555;
+  display: flex;
+  margin-left: 120px;
+  margin-bottom: 0px;
+}
+
+input[type='search'] {
+  border: none;
+  background: #fff;
+  margin: 5px 0px;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 0px solid transparent;
+  border-bottom-left-radius: 3px;
+  width: 750px;
+  border-top-left-radius: 3px;
+  height: 43px;
+}
+
+button[type='submit'] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 5px 0;
+  border: 0px solid transparent;
+  border-top-right-radius: 3px;
+  background: #fff
+    url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/search.png)
+    no-repeat center;
+  cursor: pointer;
+  border-bottom-right-radius: 3px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 18px;
+  line-height: 8;
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 768px) {
+  .logo {
     width: 150px;
     height: 30px;
   }
-}
 
-@media (min-width: 768px) {
-  .logo > img {
-    width: 150px;
-    height: 30px;
+  .nav-link {
+    display: none;
+  }
+
+  .menu-nav-link {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png)
+      10px 15px no-repeat;
+    width: 45px;
+    height: 45px;
+    display: block;
+  }
+
+  .logo {
+    margin-left: 15px;
   }
 }
 
-@media (min-width: 992px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .logo {
+    width: 150px;
+    height: 30px;
+  }
 
-@media (min-width: 1200px) {
+  .nav-link {
+    display: none;
+  }
+
+  .menu-nav-link {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png)
+      10px 15px no-repeat;
+    width: 45px;
+    height: 45px;
+    display: block;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
 }
