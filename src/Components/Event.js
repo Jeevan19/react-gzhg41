@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import EventCard from './EventCard';
 import Header from './Header';
 
 function Event() {
   const [events, setEvents] = useState('');
+  let eventListCount = 8;
   return (
     <React.Fragment>
       <Header />
@@ -16,6 +18,23 @@ function Event() {
             />
             <button type="submit">Search</button>
           </form>
+        </div>
+      </div>
+      <div class="row py-20"></div>
+      <div class="row contect-Header ">
+        <div class="col-12 font-34 font-bold py-20 ">
+          Events ({eventListCount})
+        </div>
+      </div>
+      <div class="width-90 contect-Header">
+        <div class="col-4">
+          <EventCard />
+        </div>
+        <div class="col-4">
+          <EventCard />
+        </div>
+        <div class="col-4">
+          <EventCard />
         </div>
       </div>
     </React.Fragment>

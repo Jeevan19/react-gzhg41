@@ -38,6 +38,7 @@ ul {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  margin-right: 40px;
 }
 
 .nav-link {
@@ -146,7 +147,12 @@ nav a:hover {
   padding: 20px 0px;
 }
 
-form {
+.px-10 {
+  padding: 0px 10px;
+}
+
+form,
+.contect-Header {
   color: #555;
   display: flex;
   margin-left: 120px;
@@ -182,8 +188,125 @@ button[type='submit'] {
   border-bottom-right-radius: 3px;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+.font-18 {
   font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-24 {
+  font-size: 24px;
+}
+
+.font-34 {
+  font-size: 34px;
+}
+
+.font-bold {
+  font-weight: bolder;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  margin: 0px 30px 0px 0px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-group > .card {
+  margin-bottom: 0.75rem;
+}
+
+.width-90 {
+  width: 90%;
+}
+
+.btn-soldout .soldout_icon {
+  background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png)
+    no-repeat;
+  float: left;
+  width: 20px;
+  height: 20px;
+  left: 149px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.btn-available .available_icon {
+  background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png)
+    no-repeat;
+  float: left;
+  width: 20px;
+  height: 20px;
+  left: 149px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.btn-soldout {
+  background-color: transparent;
+  border: 2px solid darkgrey;
+  color: grey;
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.btn-available {
+  background-color: transparent;
+  border: 2px solid rgb(250, 125, 8);
+  color: rgb(250, 125, 8);
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 768px) {
@@ -204,7 +327,8 @@ input::-webkit-input-placeholder {
     display: block;
   }
 
-  form {
+  form,
+  .contect-Header {
     color: #555;
     display: flex;
     margin-left: 35px;
