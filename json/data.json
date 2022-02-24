@@ -1,0 +1,140 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "name": "Understanding Color Theory: The Color Wheel And Finding ",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-1.png",
+      "available_tickets": 0,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "RGD Design Thinkers",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-2.png",
+      "available_tickets": 11,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "What Design Can Do",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-3.png",
+      "available_tickets": 206,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Perth UX Camp ",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-4.png",
+      "available_tickets": 47,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sofia Design",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-5.png",
+      "available_tickets": 66,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Design Indaba Conference ",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-6.png",
+      "available_tickets": 84,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "TYPO Berlin ",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-7.png",
+      "available_tickets": 4,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "AIGA Design Conference ",
+      "date": "21 Sept, 2020",
+      "img": "https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-8.png",
+      "available_tickets": 16,
+      "organizer": "",
+      "booked_user_details": [
+        {
+          "name": "aaa",
+          "email": "abc@abc",
+          "mobile": "12345678",
+          "no_of_seats": "2",
+          "attendees": ["bca"]
+        }
+      ]
+    }
+  ]
+}

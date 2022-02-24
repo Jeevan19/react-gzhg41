@@ -1,35 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function EventCard() {
+function EventCard(props) {
+  let eventCard = props.data;
+
   return (
-    <div class="card">
-      <img
-        src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/event-1.png"
-        class="card-img"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title font-28">
-          Understanding Color Theory: The Color Wheel And Findi..
-        </h5>
+    <div className="card">
+      <img src={eventCard.img} className="card-img" alt="..." />
+      <div className="card-body">
+        <div className="card-title font-28 font-bold">{eventCard.name}</div>
 
-        <div class="card-text py-20">
-          <span class="font-24">21 Sep, 2020</span>
-          <span class="font-24">TicketAvailable: N/A</span>
+        <div className="card-text py-20">
+          <span className="font-24">{eventCard.date}</span>
+          <span className="font-24">
+            TicketAvailable:
+            {eventCard.available_tickets === 0 && 'N/A'}
+            {eventCard.available_tickets > 0 && eventCard.available_tickets}
+          </span>
         </div>
 
-        <button class="btn-soldout">
-          <a href="#" class="soldout_icon">
-            {' '}
-          </a>
-          Sold Out
-        </button>
+        {eventCard.available_tickets === 0 && (
+          <button className="btn-soldout">
+            <a href="#" className="soldout_icon">
+              {' '}
+            </a>
+            Sold Out
+          </button>
+        )}
+
+        {eventCard.available_tickets > 0 && (
+          <button className="btn-available">
+            <a href="#" className="available_icon">
+              {' '}
+            </a>
+            Book Event
+          </button>
+        )}
       </div>
     </div>
   );
 
-  /*<button class="btn-available"> 
-                    <a href="#" class="available_icon">  </a>
+  /*<button className="btn-available"> 
+                    <a href="#" className="available_icon">  </a>
                      Book Event 
                 </button>
                 */
