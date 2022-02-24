@@ -184,7 +184,6 @@ button[type='submit'] {
 
 input::-webkit-input-placeholder {
   font-size: 18px;
-  line-height: 8;
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 768px) {
@@ -203,6 +202,32 @@ input::-webkit-input-placeholder {
     width: 45px;
     height: 45px;
     display: block;
+  }
+
+  form {
+    color: #555;
+    display: flex;
+    margin-left: 35px;
+    margin-bottom: 0px;
+  }
+
+  input[type='search'] {
+    border: none;
+    background: #fff;
+    margin: 5px 0px;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 0px solid transparent;
+    border-bottom-left-radius: 3px;
+    width: 850px;
+    border-top-left-radius: 3px;
+    height: 43px;
+  }
+
+  input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 8;
   }
 
   .logo {
