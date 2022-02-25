@@ -2,42 +2,65 @@ import React, { useState, useEffect } from 'react';
 
 import EventCard from './EventCard';
 import Header from './Header';
+import { getEventsList } from '../Service/eventsServices';
 
 function Event() {
-  const [events, setEvents] = useState([{}]);
+  const [events, setEvents] = useState([]);
   const [eventListCount, setEventListCount] = useState(0);
+  const [query, setQuery] = useState('');
+
+  let filteredEvents = events;
 
   useEffect(() => {
-    fetch('http://localhost:8080/events')
-      .then((res) => res.json())
+    let listMounted = true;
+    getEventsList()
       .then((data) => {
-        console.log(data);
-        setEvents(data);
-        setEventListCount(data.length);
+        if (listMounted) {
+          console.log(data);
+          setEvents(data);
+          setEventListCount(data.length);
+          filteredEvents = events;
+        }
       })
       .catch((err) => {
         console.log(err);
       });
+    return () => (listMounted = false);
   }, []);
 
-  const eventsSection = events.map(function (key, index) {
+  if (query !== '') {
+    filteredEvents = events
+      .filter((eve) => {
+        return eve.name.toLowerCase().includes(query.toLowerCase());
+      })
+      .map((eve) => {
+        return eve;
+      });
+  }
+
+  const eventsSection = filteredEvents.map(function (key, index) {
     return (
-      <div className="col-4">
+      <div className="col-4 col-s-12">
         <EventCard data={key} key={index} />
       </div>
     );
   });
+
+  const filterEvent = (event) => {
+    setQuery(event.target.value);
+  };
 
   return (
     <React.Fragment>
       <Header />
       <div className="row">
         <div className="col-12 bg-grey py-20">
-          <form>
+          <form onSubmit={filterEvent}>
             <input
               type="search"
               placeholder="Search By Event Title.."
               autoComplete="off"
+              onChange={filterEvent}
             />
             <button type="submit">Search</button>
           </form>
@@ -45,15 +68,23 @@ function Event() {
       </div>
       <div className="row py-20"></div>
 
-      {events.length > 0 && (
+      {filteredEvents.length >= 0 && (
         <React.Fragment>
           <div className="row contect-Header ">
-            <div className="col-12 font-34 font-bold py-20 ">
-              Events ({eventListCount})
+            <div className="col-12 font-34 py-20 ">
+              <span className="font-bold"> Events </span> ({eventListCount})
             </div>
           </div>
 
-          <div className="row contect-Header">{eventsSection}</div>
+          {filteredEvents.length > 0 && (
+            <div className="row contect-Header">{eventsSection}</div>
+          )}
+
+          {filteredEvents.length === 0 && (
+            <div className="row">
+              <div className="col-12 col-s-12"> No Records Available! </div>
+            </div>
+          )}
         </React.Fragment>
       )}
     </React.Fragment>

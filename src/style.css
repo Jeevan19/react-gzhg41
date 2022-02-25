@@ -5,6 +5,7 @@ p {
 
 body {
   margin: 0px !important;
+  font-family: sans-serif;
 }
 
 .bg-dark {
@@ -78,10 +79,9 @@ nav a {
   color: #cdcccc;
   text-decoration: none;
   font-size: 18px;
-  font-family: sans-serif;
 }
 
-nav a:hover {
+nav a:hover,  .active {
   color: #f0f0f0;
   text-decoration: underline;
   text-decoration-color: #08da66;
@@ -351,6 +351,15 @@ input::-webkit-input-placeholder,
     margin-bottom: 0px;
   }
 
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-right: 20px;
+  }
+
   input[type='search'] {
     border: none;
     background: #fff;
@@ -424,6 +433,7 @@ input::-webkit-input-placeholder,
 
   .card-text {
     display: block;
+    padding: 10px 0px;
   }
 
   .btn-soldout {
@@ -441,8 +451,8 @@ input::-webkit-input-placeholder,
 
   .card-title {
     margin-bottom: 5px;
-    height: 25px;
-    width: 76%;
+    height: auto;
+    width: 80%;
     font-size: 18px;
   }
 
@@ -463,7 +473,7 @@ input::-webkit-input-placeholder,
     width: 20px;
     height: 20px;
     right: 10px;
-    bottom: 45px;
+    bottom: 35px;
   }
 
   .available_icon {
@@ -595,13 +605,11 @@ input::-webkit-input-placeholder,
     margin-bottom: 5px;
     height: auto;
     font-size: 23px;
-    font-family: sans-serif;
   }
 
   .card-text-avail,
   .card-text-date {
     font-size: 20px;
-    font-family: sans-serif;
   }
 
   .event-section-title {

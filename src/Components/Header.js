@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
+  let location = useLocation();
+  console.log(location);
   return (
     <header className="bg-dark">
       <div className="clearfix display-flex container" data-items="center">
@@ -20,7 +22,13 @@ function Header() {
                 <Link to="/event"> Dashboard</Link>
               </li>
               <li className="nav-link">
-                <Link to="/event"> Events</Link>
+                <Link
+                  to="/event"
+                  className={location.pathname === '/event' ? 'active' : ''}
+                >
+                  {' '}
+                  Events
+                </Link>
               </li>
               <li className=" nav-link">
                 <Link to="/event"> Help</Link>
