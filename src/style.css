@@ -208,6 +208,10 @@ input::-webkit-input-placeholder,
 .font-34 {
   font-size: 34px;
 }
+.event-section-title {
+  font-size: 34px;
+  font-weight: bolder;
+}
 
 .font-bold {
   font-weight: bolder;
@@ -234,6 +238,13 @@ input::-webkit-input-placeholder,
 .card-title {
   margin-bottom: 5px;
   height: 70px;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.card-text-avail,
+.card-text-date {
+  font-size: 24px;
 }
 
 .card-text {
@@ -256,8 +267,8 @@ input::-webkit-input-placeholder,
   width: 100%;
 }
 
-.card-group > .card {
-  margin-bottom: 0.75rem;
+.font-orange {
+  color: rgb(250, 125, 8);
 }
 
 .width-90 {
@@ -310,10 +321,14 @@ input::-webkit-input-placeholder,
   margin-top: 10px;
 }
 
-@media only screen and (min-device-width: 414px) and (max-device-width: 768px) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
   .logo {
     width: 150px;
-    height: 30px;
+    height: 20px;
+  }
+
+  .logo-img {
+    width: 150px;
   }
 
   .nav-link {
@@ -322,9 +337,9 @@ input::-webkit-input-placeholder,
 
   .menu-nav-link {
     background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png)
-      10px 15px no-repeat;
+      20px 3px no-repeat;
     width: 45px;
-    height: 45px;
+    height: 25px;
     display: block;
   }
 
@@ -345,18 +360,120 @@ input::-webkit-input-placeholder,
     color: inherit;
     border: 0px solid transparent;
     border-bottom-left-radius: 3px;
-    width: 850px;
+    width: 300px;
     border-top-left-radius: 3px;
     height: 43px;
   }
 
   input::-webkit-input-placeholder {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 8;
   }
 
   .logo {
     margin-left: 15px;
+  }
+
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33% !important;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100% !important;
+  }
+
+  .card {
+    flex-direction: inherit;
+  }
+
+  .card-img {
+    width: 120px;
+    height: 120px;
+    margin-top: 21px;
+    display: none;
+  }
+
+  .card-text {
+    display: block;
+  }
+
+  .btn-soldout {
+    display: none;
+  }
+
+  .btn-available {
+    display: none;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 10px 10px;
+  }
+
+  .card-title {
+    margin-bottom: 5px;
+    height: 25px;
+    width: 76%;
+    font-size: 18px;
+  }
+
+  .card-text-avail,
+  .card-text-date {
+    font-size: 16px;
+  }
+
+  .event-section-title {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .soldout_icon {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png)
+      no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    bottom: 45px;
+  }
+
+  .available_icon {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png)
+      no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    bottom: 45px;
   }
 }
 
@@ -366,6 +483,15 @@ input::-webkit-input-placeholder,
     height: 30px;
   }
 
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-right: 20px;
+  }
+
   .nav-link {
     display: none;
   }
@@ -373,12 +499,138 @@ input::-webkit-input-placeholder,
   .menu-nav-link {
     background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/hamburger.png)
       10px 15px no-repeat;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     display: block;
+  }
+
+  form,
+  .contect-Header {
+    color: #555;
+    display: flex;
+    margin-left: 40px;
+    margin-bottom: 0px;
   }
 
   .logo {
     margin-left: 15px;
+  }
+
+  input[type='search'] {
+    border: none;
+    background: #fff;
+    margin: 5px 0px;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border-bottom-left-radius: 3px;
+    width: 650px;
+    border-top-left-radius: 3px;
+    height: 43px;
+  }
+
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33% !important;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100% !important;
+  }
+
+  .card {
+    flex-direction: inherit;
+    margin: 0px 30px 15px 0px;
+  }
+
+  .card-img {
+    width: 120px;
+    height: 120px;
+    margin-top: 21px;
+    margin-left: 21px;
+    border-radius: 5px;
+  }
+
+  .card-text {
+    display: block;
+  }
+
+  .btn-soldout {
+    display: none;
+  }
+
+  .btn-available {
+    display: none;
+  }
+
+  .card-title {
+    margin-bottom: 5px;
+    height: auto;
+    font-size: 23px;
+    font-family: sans-serif;
+  }
+
+  .card-text-avail,
+  .card-text-date {
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .event-section-title {
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 16px 16px;
+  }
+
+  .soldout_icon {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/sold-out.png)
+      no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    bottom: 40px;
+  }
+
+  .available_icon {
+    background: url(https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/book.png)
+      no-repeat;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    bottom: 45px;
   }
 }
