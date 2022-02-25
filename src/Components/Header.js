@@ -1,34 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header class="bg-dark">
-      <div class="clearfix display-flex container" data-items="center">
-        <div class="logo">
+    <header className="bg-dark">
+      <div className="clearfix display-flex container" data-items="center">
+        <div className="logo">
           <a href="">
             <img
               src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png"
               alt="logo Placeholder"
             />
-          </a>{' '}
+          </a>
         </div>
-        <div class="align-items-center margin-left-auto">
+        <div className="align-items-center margin-left-auto">
           <nav>
-            <ul class="nav">
-              <li class=" nav-link">
-                <a href="">Dashboard</a>
+            <ul className="nav">
+              <li className=" nav-link">
+                <Link to="/event"> Dashboard</Link>
               </li>
-              <li class="nav-link">
-                <a href="">Events</a>
+              <li className="nav-link">
+                <Link to="/event"> Events</Link>
               </li>
-              <li class=" nav-link">
-                <a href="">Help</a>
+              <li className=" nav-link">
+                <Link to="/event"> Help</Link>
               </li>
-              <li class=" nav-link">
-                <a href="">Logout</a>
+              <li className=" nav-link">
+                <Link to="/event"> Logout</Link>
               </li>
-              <li class=" ">
-                <a class="menu-nav-link" href=""></a>
+              <li className=" ">
+                <a className="menu-nav-link" href=""></a>
               </li>
             </ul>
           </nav>
