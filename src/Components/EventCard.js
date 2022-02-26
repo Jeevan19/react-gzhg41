@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { bookTickets } from '../store/eventStore';
 
 function EventCard(props) {
   let eventCard = props.data;
@@ -33,7 +36,7 @@ function EventCard(props) {
 
         {eventCard.available_tickets === 0 && (
           <button className="btn-soldout">
-            <a href="#" className="soldout_icon">
+            <a href="" className="soldout_icon">
               {' '}
             </a>
             Sold Out
@@ -42,7 +45,7 @@ function EventCard(props) {
 
         {eventCard.available_tickets > 0 && (
           <button className="btn-available" onClick={bookEvent}>
-            <a href="#" className="available_icon">
+            <a href="" className="available_icon">
               {' '}
             </a>
             Book Event
@@ -50,13 +53,13 @@ function EventCard(props) {
         )}
 
         {eventCard.available_tickets === 0 && (
-          <a href="#" className="soldout_icon">
+          <a href="" className="soldout_icon">
             {' '}
           </a>
         )}
 
         {eventCard.available_tickets > 0 && (
-          <a href="#" className="available_icon" onClick={bookEvent}>
+          <a href="" className="available_icon" onClick={bookEvent}>
             {' '}
           </a>
         )}

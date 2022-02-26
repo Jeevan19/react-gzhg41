@@ -81,7 +81,8 @@ nav a {
   font-size: 18px;
 }
 
-nav a:hover,  .active {
+nav a:hover,
+.active {
   color: #f0f0f0;
   text-decoration: underline;
   text-decoration-color: #08da66;
@@ -101,16 +102,16 @@ nav a:hover,  .active {
   width: 33.33% !important;
 }
 .col-5 {
-  width: 41.66%;
+  width: 41.66% !important;
 }
 .col-6 {
-  width: 50%;
+  width: 50% !important;
 }
 .col-7 {
-  width: 58.33%;
+  width: 58.33% !important;
 }
 .col-8 {
-  width: 66.66%;
+  width: 66.66% !important;
 }
 .col-9 {
   width: 75%;
@@ -143,8 +144,24 @@ nav a:hover,  .active {
   background-color: lightgrey;
 }
 
+.p-20 {
+  padding: 20px 20px;
+}
+
 .py-20 {
   padding: 20px 0px;
+}
+
+.py-10 {
+  padding: 10px 0px;
+}
+
+.my-20 {
+  margin: 20px 0px;
+}
+
+.my-10 {
+  margin: 10px 0px;
 }
 
 .px-10 {
@@ -173,7 +190,7 @@ input[type='search'] {
   height: 43px;
 }
 
-button[type='submit'] {
+.event-search {
   text-indent: -999px;
   overflow: hidden;
   width: 40px;
@@ -319,6 +336,121 @@ input::-webkit-input-placeholder,
   width: 100%;
   border-radius: 6px;
   margin-top: 10px;
+}
+
+.booking-container {
+  border: 1px solid lightgrey;
+  height: auto;
+  padding: 15px 15px;
+}
+
+.booking-header {
+  font: 40px sans-serif;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.booking-date,
+.booking-avai_tic {
+  font: 24px sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.event-detail-section {
+  border: 1px solid lightgrey;
+}
+
+.evet-image-display {
+  margin: 50px 50px;
+  border: 1px solid grey;
+  height: 350px;
+}
+
+.booking-form {
+  color: #555;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  display: block;
+}
+
+.booking-form-label {
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: right;
+  top: 10px;
+  position: relative;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+input[type='text'],
+input[type='email'] {
+  padding: 7px 8px;
+  font-size: 20px;
+  color: inherit;
+  width: 450px;
+  border-radius: 3px;
+  height: 43px;
+  border: 2px solid;
+}
+
+input[type='number'] {
+  padding: 7px 8px;
+  font-size: 20px;
+  color: inherit;
+  width: 100px;
+  border-radius: 3px;
+  height: 40px;
+  border: 2px solid;
+}
+
+.booking-button {
+  display: flex;
+  justify-content: center;
+  margin: 15px 15px;
+}
+
+.booking-submit {
+  padding: 15px 10px;
+  margin: 0px 48px;
+  font-size: 20px;
+  background-color: rgb(237 120 11);
+  border-radius: 5px;
+  color: #fff;
+  border: 0px;
+  width: 180px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-cancel {
+  padding: 15px 10px;
+  margin: 0px 48px;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  color: rgb(237 120 11);
+  border: 2px solid rgb(237 120 11);
+  width: 180px;
+  font-weight: bold;
+}
+
+.event-img {
+  width: 410px;
+  height: 350px;
+}
+
+.error-text {
+  font-size: 20px;
+  color: darkred;
+}
+
+.display-none {
+  display: none;
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
@@ -485,6 +617,121 @@ input::-webkit-input-placeholder,
     right: 10px;
     bottom: 45px;
   }
+
+  .display-s-none {
+    display: none;
+  }
+
+  .booking-container {
+    border: 0px;
+    height: auto;
+    padding: 15px 15px;
+  }
+
+  .booking-header {
+    font: 50px sans-serif;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+  }
+
+  .booking-date,
+  .booking-avai_tic {
+    font: 35px sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .event-detail-section {
+    border-top: 1px solid lightgrey !important;
+    border: 0px;
+  }
+
+  .evet-image-display {
+    margin: 50px 50px;
+    border: 1px solid grey;
+    height: 350px;
+  }
+
+  .booking-form {
+    color: #555;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    display: block;
+  }
+
+  .booking-form-label {
+    font-size: 40px;
+    font-weight: bolder;
+  }
+
+  .text-align-right {
+    text-align: unset;
+  }
+
+  input[type='text'] {
+    padding: 7px 8px;
+    font-size: 45px;
+    color: inherit;
+    width: 900px;
+    border-radius: 10px;
+    height: 90px;
+    border: 2px solid #c7c7c7;
+    margin: 30px 10px;
+  }
+
+  input[type='number'] {
+    padding: 7px 8px;
+    font-size: 45px;
+    color: inherit;
+    width: 150px;
+    border-radius: 10px;
+    height: 75px;
+    border: 2px solid #c7c7c7;
+    margin: 30px 10px;
+  }
+
+  .booking-button {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+  }
+
+  .booking-submit {
+    margin: 0px 10px;
+    font-size: 45px;
+    background-color: rgb(237 120 11);
+    border-radius: 10px;
+    color: #fff;
+    border: 0px;
+    width: 420px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 120px;
+  }
+
+  .booking-cancel {
+    margin: 0px 10px;
+    font-size: 45px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgb(237 120 11);
+    border: 2px solid rgb(237 120 11);
+    width: 420px;
+    font-weight: bold;
+  }
+
+  .add-Attendee {
+    padding: 25px 0px;
+    text-align: right;
+    color: rgb(237 120 11);
+  }
+
+  .error-text {
+    font-size: 30px;
+    color: darkred;
+    margin: 0px 10px;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -526,7 +773,11 @@ input::-webkit-input-placeholder,
     margin-left: 15px;
   }
 
-  input[type='search'] {
+  .display-m-none {
+    display: none;
+  }
+
+  .event-search {
     border: none;
     background: #fff;
     margin: 5px 0px;
@@ -539,40 +790,40 @@ input::-webkit-input-placeholder,
     height: 43px;
   }
 
-  .col-s-1 {
+  .col-m-1 {
     width: 8.33%;
   }
-  .col-s-2 {
+  .col-m-2 {
     width: 16.66%;
   }
-  .col-s-3 {
+  .col-m-3 {
     width: 25%;
   }
-  .col-s-4 {
+  .col-m-4 {
     width: 33.33% !important;
   }
-  .col-s-5 {
+  .col-m-5 {
     width: 41.66%;
   }
-  .col-s-6 {
+  .col-m-6 {
     width: 50%;
   }
-  .col-s-7 {
+  .col-m-7 {
     width: 58.33%;
   }
-  .col-s-8 {
+  .col-m-8 {
     width: 66.66%;
   }
-  .col-s-9 {
+  .col-m-9 {
     width: 75%;
   }
-  .col-s-10 {
+  .col-m-10 {
     width: 83.33%;
   }
-  .col-s-11 {
+  .col-m-11 {
     width: 91.66%;
   }
-  .col-s-12 {
+  .col-m-12 {
     width: 100% !important;
   }
 

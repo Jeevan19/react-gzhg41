@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import EventCard from './EventCard';
 import Header from './Header';
 import { getEventsList } from '../Service/eventsServices';
+import { addEvents } from '../store/eventStore';
 
 function Event() {
+  //let events = useSelector(state => state.events);
+  const dispatch = useDispatch();
+
   const [events, setEvents] = useState([]);
   const [eventListCount, setEventListCount] = useState(0);
   const [query, setQuery] = useState('');
@@ -16,9 +21,10 @@ function Event() {
     getEventsList()
       .then((data) => {
         if (listMounted) {
-          console.log(data);
-          setEvents(data);
+          dispatch(addEvents(data));
           setEventListCount(data.length);
+          setEvents(data);
+          //events = useSelector(state => console.log(state));
           filteredEvents = events;
         }
       })
@@ -40,7 +46,7 @@ function Event() {
 
   const eventsSection = filteredEvents.map(function (key, index) {
     return (
-      <div className="col-4 col-s-12">
+      <div className="col-4 col-m-12 col-s-12">
         <EventCard data={key} key={index} />
       </div>
     );
@@ -62,7 +68,9 @@ function Event() {
               autoComplete="off"
               onChange={filterEvent}
             />
-            <button type="submit">Search</button>
+            <button type="submit" className="event-search">
+              Search
+            </button>
           </form>
         </div>
       </div>
