@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router';
+
 import { bookTickets } from '../store/eventStore';
 
 function EventBooking() {
-  const events = useSelector((state) => state);
-  const navigate = useNavigate();
-  let { id } = useParams();
-
-  const dispatch = useDispatch();
   const [submitted, setSubmitted] = useState(false);
   const [makePaymentFlag, setMakePaymentFlag] = useState(false);
   const [inputVal, setInputVal] = useState({
@@ -19,20 +15,6 @@ function EventBooking() {
     attendeeName: '',
   });
 
-  const bookingEvent =
-    events.length > 0 &&
-    events.filter((eve) => {
-      return eve.id == id;
-    })[0];
-
-  /*
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [attendeesCount, setAttendeesCount] = useState("");
-    const [attendeeName, setAttendeeName] = useState("");
-  */
-
   const [validation, setValidation] = useState({
     name: '',
     email: '',
@@ -40,6 +22,25 @@ function EventBooking() {
     attendeesCount: '',
     attendeeName: '',
   });
+
+  const navigate = useNavigate();
+  let { id } = useParams();
+  const dispatch = useDispatch();
+  let attendeeArr = [];
+  let addAttendeesSec = '';
+  const [addAttendees, setAddAttendees] = useState('');
+
+  //const bookingEvent = useSelector((state) => state.find(state.id === id));
+  const events = useSelector((state) => state);
+  const bookingEvent =
+    events.length > 0 &&
+    events.filter((eve) => {
+      return eve.id == id;
+    })[0];
+
+  useEffect(() => {
+    checkValidation();
+  }, [inputVal, submitted]);
 
   const checkValidation = () => {
     let errorFlag = false;
@@ -79,15 +80,8 @@ function EventBooking() {
         errors.phone = '';
       }
 
-      /*      
-      if (!inputVal.attendeeName === "") {
-        errors.attendeeName = "Please enter the name of Attendee";
-        errorFlag = true;
-      } else{
-        errors.attendeeName = "";
-      }
-      */
       setValidation(errors);
+
       if (!errorFlag) {
         let bookingObj = bookingEvent;
         bookingObj.headCount = inputVal.attendeesCount;
@@ -103,49 +97,52 @@ function EventBooking() {
   const makePayment = () => {
     navigate('/', { replace: true });
   };
-  const addAttendee = () => {};
-
-  useEffect(() => {
-    checkValidation();
-  }, [inputVal, submitted]);
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputVal((values) => ({ ...values, [name]: value }));
+    if (name === 'attendeesCount') {
+      for (var i = 1; i <= value; i++) {
+        let obj = {
+          id: i,
+        };
+        attendeeArr.push(obj);
+      }
+
+      addAttendeesSec = attendeeArr.map(function (key, index) {
+        return (
+          <div className="row my-20" key="index">
+            <div className="col-5 col-s-12 text-align-right">
+              <label className="booking-form-label px-10">
+                Number of Attendee {key.id}:
+              </label>
+            </div>
+            <div className="col-7 col-s-12 ">
+              <input
+                type="text"
+                name={'attendeeName' + key.id}
+                value={inputVal.attendeeName}
+                onChange={handleChange}
+              />
+              {validation.attendeeName && (
+                <p className="error-text">{validation.attendeeName}</p>
+              )}
+            </div>
+          </div>
+        );
+      });
+      setAddAttendees(addAttendeesSec);
+    }
   };
 
   function bookTicket(e) {
-    setSubmitted(true);
     e.preventDefault();
-    /*e.persist();*/
+    setSubmitted(true);
   }
 
-  const addAttendeeDiv = (
-    <React.Fragment>
-      <div className="row my-20">
-        <div className="col-5 col-s-12 text-align-right">
-          <label className="booking-form-label px-10">
-            Number of Attendee 2:
-          </label>
-        </div>
-        <div className="col-7 col-s-12 ">
-          <input
-            type="text"
-            name="attendeeName"
-            value={inputVal.attendeeName}
-            onChange={handleChange}
-          />
-          {validation.attendeeName && (
-            <p className="error-text">{validation.attendeeName}</p>
-          )}
-        </div>
-      </div>
-    </React.Fragment>
-  );
-
   return (
-    <React.Fragment>
+    <div id="eventBooking">
       <div className="container">
         <div className="row booking-container">
           <div className="col-12 col-s-12 py-20">
@@ -187,6 +184,7 @@ function EventBooking() {
                         name="name"
                         value={inputVal.name}
                         onChange={handleChange}
+                        autoComplete="autoComplete"
                       />
                       {validation.name && (
                         <p className="error-text">{validation.name}</p>
@@ -206,6 +204,7 @@ function EventBooking() {
                         name="email"
                         value={inputVal.email}
                         onChange={handleChange}
+                        autoComplete="autoComplete"
                       />
                       {validation.email && (
                         <p className="error-text">{validation.email}</p>
@@ -225,6 +224,7 @@ function EventBooking() {
                         name="phone"
                         value={inputVal.phone}
                         onChange={handleChange}
+                        autoComplete="autoComplete"
                       />
                       {validation.phone && (
                         <p className="error-text">{validation.phone}</p>
@@ -246,6 +246,7 @@ function EventBooking() {
                         max={bookingEvent.available_tickets}
                         value={inputVal.attendeesCount}
                         onChange={handleChange}
+                        autoComplete="autoComplete"
                       />
                       {validation.attendeesCount && (
                         <p className="error-text">
@@ -255,7 +256,7 @@ function EventBooking() {
                     </div>
                   </div>
 
-                  <div className="">{addAttendeeDiv}</div>
+                  <div>{addAttendees}</div>
 
                   <div className="row my-20 display-m-none display-none">
                     <div className="col-s-12 ">
@@ -329,7 +330,7 @@ function EventBooking() {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

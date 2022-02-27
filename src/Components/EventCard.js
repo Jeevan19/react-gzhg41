@@ -63,12 +63,6 @@ function EventCard(props) {
       </div>
     </div>
   );
-
-  /*<button className="btn-available"> 
-                    <a href="#" className="available_icon">  </a>
-                     Book Event 
-                </button>
-                */
 }
 
 export default EventCard;

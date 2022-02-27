@@ -10,6 +10,7 @@ function Header() {
         <div className="logo">
           <a href="">
             <img
+              className="logo-img"
               src="https://alvimurtaza.github.io/Interview-Front-end/images/l3-l4-engineer/logo.png"
               alt="logo Placeholder"
             />
@@ -28,7 +29,11 @@ function Header() {
                 <Link
                   to="/event"
                   key="events"
-                  className={location.pathname === '/event' ? 'active' : ''}
+                  className={
+                    location.pathname === '/event' || location.pathname === '/'
+                      ? 'active'
+                      : ''
+                  }
                 >
                   {' '}
                   Events

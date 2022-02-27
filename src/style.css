@@ -88,7 +88,8 @@ nav a {
   font-size: 18px;
 }
 
-nav a:hover,  .active {
+nav a:hover,
+.active {
   color: #f0f0f0;
   text-decoration: underline;
   text-decoration-color: #08da66;
@@ -150,7 +151,7 @@ nav a:hover,  .active {
   background-color: lightgrey;
 }
 
-.p-20{
+.p-20 {
   padding: 20px 20px;
 }
 
@@ -357,7 +358,8 @@ input::-webkit-input-placeholder,
   font-weight: bolder;
 }
 
-.booking-date, .booking-avai_tic {
+.booking-date,
+.booking-avai_tic {
   font: 24px sans-serif;
   display: flex;
   justify-content: center;
@@ -373,7 +375,7 @@ input::-webkit-input-placeholder,
   height: 350px;
 }
 
-.booking-form{
+.booking-form {
   color: #555;
   margin-left: 0px;
   margin-bottom: 0px;
@@ -392,14 +394,15 @@ input::-webkit-input-placeholder,
   text-align: right;
 }
 
-input[type='text'] , input[type='email'] {
-    padding: 7px 8px;
-    font-size: 20px;
-    color: inherit;
-    width: 450px;
-    border-radius: 3px;
-    height: 43px;
-    border: 2px solid;
+input[type='text'],
+input[type='email'] {
+  padding: 7px 8px;
+  font-size: 20px;
+  color: inherit;
+  width: 450px;
+  border-radius: 3px;
+  height: 43px;
+  border: 2px solid;
 }
 
 input[type='number'] {
@@ -413,9 +416,9 @@ input[type='number'] {
 }
 
 .booking-button {
-    display: flex;
-    justify-content: center;
-    margin: 15px 15px;
+  display: flex;
+  justify-content: center;
+  margin: 15px 15px;
 }
 
 .booking-submit {
@@ -466,7 +469,7 @@ input[type='number'] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   cursor: pointer;
 }
@@ -490,7 +493,7 @@ input[type='number'] {
   display: flex;
 }
 
-.makepayment-content{
+.makepayment-content {
   font: 40px sans-serif;
   display: flex;
   justify-content: center;
@@ -538,6 +541,15 @@ input[type='number'] {
   border: 2px solid rgb(237 120 11);
   width: 350px;
   font-weight: bold;
+}
+
+.no-records {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
@@ -711,133 +723,132 @@ input[type='number'] {
     right: 10px;
     bottom: 45px;
   }
-  
+
   .display-s-none {
     display: none;
   }
 
-  
-.booking-container {
-  border: 0px ;
-  height: auto;
-  padding: 15px 15px;
-}
+  .booking-container {
+    border: 0px;
+    height: auto;
+    padding: 15px 15px;
+  }
 
-.booking-header {
-  font: 50px sans-serif;
-  display: flex;
-  justify-content: center;
-  font-weight: bolder;
-}
+  .booking-header {
+    font: 50px sans-serif;
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+  }
 
-.booking-date, .booking-avai_tic {
-  font: 35px sans-serif;
-  display: flex;
-  justify-content: center;
-}
+  .booking-date,
+  .booking-avai_tic {
+    font: 35px sans-serif;
+    display: flex;
+    justify-content: center;
+  }
 
-.event-detail-section {
-  border-top: 1px solid lightgrey !important;
-  border: 0px;
-}
+  .event-detail-section {
+    border-top: 1px solid lightgrey !important;
+    border: 0px;
+  }
 
-.evet-image-display {
-  margin: 50px 50px;
-  border: 1px solid grey;
-  height: 350px;
-}
+  .evet-image-display {
+    margin: 50px 50px;
+    border: 1px solid grey;
+    height: 350px;
+  }
 
-.booking-form{
-  color: #555;
-  margin-left: 0px;
-  margin-bottom: 0px;
-  display: block;
-}
+  .booking-form {
+    color: #555;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    display: block;
+  }
 
-.booking-form-label {
-  font-size: 40px;
-  font-weight: bolder;
-}
+  .booking-form-label {
+    font-size: 40px;
+    font-weight: bolder;
+  }
 
-.text-align-right {
-  text-align: unset;
-}
+  .text-align-right {
+    text-align: unset;
+  }
 
-input[type='text'] {
-  padding: 7px 8px;
-  font-size: 45px;
-  color: inherit;
-  width: 900px;
-  border-radius: 10px;
-  height: 90px;
-  border: 2px solid #c7c7c7;
-  margin: 30px 10px;
-}
+  input[type='text'] {
+    padding: 7px 8px;
+    font-size: 45px;
+    color: inherit;
+    width: 900px;
+    border-radius: 10px;
+    height: 90px;
+    border: 2px solid #c7c7c7;
+    margin: 30px 10px;
+  }
 
-input[type='number'] {
-  padding: 7px 8px;
-  font-size: 45px;
-  color: inherit;
-  width: 150px;
-  border-radius: 10px;
-  height: 75px;
-  border: 2px solid #c7c7c7;
-  margin: 30px 10px;
-}
+  input[type='number'] {
+    padding: 7px 8px;
+    font-size: 45px;
+    color: inherit;
+    width: 150px;
+    border-radius: 10px;
+    height: 75px;
+    border: 2px solid #c7c7c7;
+    margin: 30px 10px;
+  }
 
-.booking-button {
+  .booking-button {
     display: flex;
     justify-content: space-between;
     margin: 0px;
-}
+  }
 
-.booking-submit {
-  margin: 0px 10px;
-  font-size: 45px;
-  background-color: rgb(237 120 11);
-  border-radius: 10px;
-  color: #fff;
-  border: 0px;
-  width: 420px;
-  font-weight: bold;
-  cursor: pointer;
-  height: 120px;
-}
+  .booking-submit {
+    margin: 0px 10px;
+    font-size: 45px;
+    background-color: rgb(237 120 11);
+    border-radius: 10px;
+    color: #fff;
+    border: 0px;
+    width: 420px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 120px;
+  }
 
-.booking-cancel {
-  margin: 0px 10px;
-  font-size: 45px;
-  background-color: transparent;
-  border-radius: 5px;
-  color: rgb(237 120 11);
-  border: 2px solid rgb(237 120 11);
-  width: 420px;
-  font-weight: bold;
-}
+  .booking-cancel {
+    margin: 0px 10px;
+    font-size: 45px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgb(237 120 11);
+    border: 2px solid rgb(237 120 11);
+    width: 420px;
+    font-weight: bold;
+  }
 
-.add-Attendee {
-  padding: 25px 0px;
-  text-align: right;
-  color: rgb(237 120 11);
-}
+  .add-Attendee {
+    padding: 25px 0px;
+    text-align: right;
+    color: rgb(237 120 11);
+  }
 
-.error-text {
-  font-size: 30px;
-  color:darkred;
-  margin: 0px 10px;
-}
+  .error-text {
+    font-size: 30px;
+    color: darkred;
+    margin: 0px 10px;
+  }
 
-.makePayment-container {
-  height: 30%;
-  padding: 10px 10px;
-  background-color: ghostwhite;
-  width: 90%;
-  position: absolute;
-  top: 10%;
-  left: 4%;
-  border-radius: 10px;
-}
-
+  .makePayment-container {
+    height: 30%;
+    padding: 10px 10px;
+    background-color: ghostwhite;
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    border-radius: 10px;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -1005,7 +1016,7 @@ input[type='number'] {
     right: 10px;
     bottom: 45px;
   }
-  
+
   .makePayment-container {
     height: 45%;
     padding: 10px 10px;
