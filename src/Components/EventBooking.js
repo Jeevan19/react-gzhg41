@@ -103,7 +103,7 @@ function EventBooking() {
     const value = event.target.value;
     setInputVal((values) => ({ ...values, [name]: value }));
     if (name === 'attendeesCount') {
-      for (var i = 1; i <= value; i++) {
+      for (var i = 2; i <= value; i++) {
         let obj = {
           id: i,
         };

@@ -4,7 +4,7 @@ p {
 }
 
 .body {
-  height: calc(100vh - 0px);
+  height: calc(100vh - 1450px);
   overflow: scroll;
   display: flex;
   flex-direction: column;
