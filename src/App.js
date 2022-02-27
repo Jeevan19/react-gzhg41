@@ -8,14 +8,15 @@ import './style.css';
 export default function App() {
   return (
     <React.Fragment>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/event" element={<Event />} />
-          <Route path="/event/:id/booking" element={<EventBooking />} />
-          <Route path="/" element={<Event />} />
-          <Route path="*" element={<Event />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="body">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/event" element={<Event />} />
+            <Route path="/event/:id/booking" exact element={<EventBooking />} />
+            <Route path="/" element={<Event />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </React.Fragment>
   );
 }

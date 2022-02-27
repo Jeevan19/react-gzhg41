@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
   let location = useLocation();
-  console.log(location);
+
   return (
     <header className="bg-dark">
       <div className="clearfix display-flex container" data-items="center">
@@ -19,11 +19,15 @@ function Header() {
           <nav>
             <ul className="nav">
               <li className=" nav-link">
-                <Link to="/event"> Dashboard</Link>
+                <Link to="/event" key="dashboard">
+                  {' '}
+                  Dashboard
+                </Link>
               </li>
               <li className="nav-link">
                 <Link
                   to="/event"
+                  key="events"
                   className={location.pathname === '/event' ? 'active' : ''}
                 >
                   {' '}
@@ -31,10 +35,16 @@ function Header() {
                 </Link>
               </li>
               <li className=" nav-link">
-                <Link to="/event"> Help</Link>
+                <Link to="/event" key="help">
+                  {' '}
+                  Help
+                </Link>
               </li>
               <li className=" nav-link">
-                <Link to="/event"> Logout</Link>
+                <Link to="/event" key="logout">
+                  {' '}
+                  Logout
+                </Link>
               </li>
               <li className=" ">
                 <a className="menu-nav-link" href=""></a>

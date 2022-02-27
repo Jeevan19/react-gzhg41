@@ -1,46 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
 
 import EventCard from './EventCard';
 import Header from './Header';
-import { getEventsList } from '../Service/eventsServices';
+import { getEventsList } from  '../Service/eventsServices';
 import { addEvents } from '../store/eventStore';
 
 function Event() {
-  //let events = useSelector(state => state.events);
+
+  let eventList = useSelector(state => state);
   const dispatch = useDispatch();
 
   const [events, setEvents] = useState([]);
   const [eventListCount, setEventListCount] = useState(0);
   const [query, setQuery] = useState('');
 
-  let filteredEvents = events;
+  let filteredEvents = eventList.length > 0 ? eventList : events;
+  //let filteredEvents =  eventList;
 
   useEffect(() => {
-    let listMounted = true;
-    getEventsList()
-      .then((data) => {
-        if (listMounted) {
-          dispatch(addEvents(data));
-          setEventListCount(data.length);
-          setEvents(data);
-          //events = useSelector(state => console.log(state));
-          filteredEvents = events;
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    return () => (listMounted = false);
+    if(eventList.length == 0){
+      let listMounted = true;
+      getEventsList()
+        .then((data) => {
+          if (listMounted) {
+            dispatch(addEvents(data));
+            setEventListCount(data.length);
+            setEvents(data);
+            //events = useSelector(state => console.log(state));
+            filteredEvents = events;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      return () => (listMounted = false);
+   }
   }, []);
 
-  if (query !== '') {
-    filteredEvents = events
-      .filter((eve) => {
-        return eve.name.toLowerCase().includes(query.toLowerCase());
-      })
-      .map((eve) => {
-        return eve;
+  if(query !== "" ) {
+    filteredEvents = events.filter( (eve)=> { 
+        return eve.name.toLowerCase().includes(query.toLowerCase()) 
+      }).map((eve) => {
+        return eve
       });
   }
 
@@ -52,9 +54,9 @@ function Event() {
     );
   });
 
-  const filterEvent = (event) => {
+  const filterEvent = event => {
     setQuery(event.target.value);
-  };
+  }
 
   return (
     <React.Fragment>
@@ -65,12 +67,9 @@ function Event() {
             <input
               type="search"
               placeholder="Search By Event Title.."
-              autoComplete="off"
-              onChange={filterEvent}
+              autoComplete="off" onChange={filterEvent}
             />
-            <button type="submit" className="event-search">
-              Search
-            </button>
+            <button type="submit" className="event-search">Search</button>
           </form>
         </div>
       </div>
@@ -90,7 +89,7 @@ function Event() {
 
           {filteredEvents.length === 0 && (
             <div className="row">
-              <div className="col-12 col-s-12"> No Records Available! </div>
+              <div className="col-12 col-s-12"> No Records Available!  </div>
             </div>
           )}
         </React.Fragment>

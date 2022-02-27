@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { bookTickets } from '../store/eventStore';
 
 function EventBooking() {
   const events = useSelector((state) => state);
+  const navigate = useNavigate();
   let { id } = useParams();
 
   const dispatch = useDispatch();
   const [submitted, setSubmitted] = useState(false);
+  const [makePaymentFlag, setMakePaymentFlag] = useState(false);
   const [inputVal, setInputVal] = useState({
     name: '',
     email: '',
@@ -17,11 +19,11 @@ function EventBooking() {
     attendeeName: '',
   });
 
-  const bookingEvent = events.filter((eve) => {
-    return eve.id == id;
-  })[0];
-
-  console.log(bookingEvent);
+  const bookingEvent =
+    events.length > 0 &&
+    events.filter((eve) => {
+      return eve.id == id;
+    })[0];
 
   /*
     const [name, setName] = useState("");
@@ -40,45 +42,44 @@ function EventBooking() {
   });
 
   const checkValidation = () => {
-    console.log(submitted);
     let errorFlag = false;
     if (submitted) {
       let errors = validation;
-      const nameCondt = '/^[a-zA-Z ]*$/';
-      /* if (!inputVal.name.trim()) {
-        errors.name = "Please enter your name";
+      const nameCondt = "^[$&+,:;=?@#|'<>.^*()%!-0-9]*$"; //'^[a-zA-Z]+(\s[a-zA-Z]+)*';;
+      if (!inputVal.name.trim()) {
+        errors.name = 'Please enter your name';
         errorFlag = true;
-      } else if (!inputVal.name.match(nameCondt)){
-        errors.name = "Only letters and spaces are allowed";
-        errorFlag = true;
-      } else {
-        errors.name = "";
-      }
-          
-      const emailCond =
-        "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
-      if (!inputVal.email.trim()) {
-        errors.email = " Please enter your email";
-        errorFlag = true;
-      } else if (!inputVal.email.match(emailCond)) {
-        errors.email = "invalid email";
+      } else if (inputVal.name.match(nameCondt)) {
+        errors.name = 'Only letters and spaces are allowed';
         errorFlag = true;
       } else {
-        errors.email = "";
+        errors.name = '';
       }
 
-      const phoneCondt = "/^[0-9]*$/";
-      if (!inputVal.phone.trim()) {
-        errors.phone = "Please enter your Phone No";
+      const emailCond = '[a-z0-9]+@[a-z]+.[a-z]{2,3}';
+      //"/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
+      if (!inputVal.email.trim()) {
+        errors.email = ' Please enter your email';
         errorFlag = true;
-      } else if (!inputVal.phone.match(phoneCondt)){
-        errors.phone = "Only Numbers allowed";
+      } else if (!inputVal.email.match(emailCond)) {
+        errors.email = 'invalid email';
         errorFlag = true;
       } else {
-        errors.phone = "";
+        errors.email = '';
       }
-      
-      
+
+      const phoneCondt = '^(0|[1-9][0-9]*)$';
+      if (!inputVal.phone.trim()) {
+        errors.phone = 'Please enter your Phone No';
+        errorFlag = true;
+      } else if (!inputVal.phone.match(phoneCondt)) {
+        errors.phone = 'Only Numbers allowed';
+        errorFlag = true;
+      } else {
+        errors.phone = '';
+      }
+
+      /*      
       if (!inputVal.attendeeName === "") {
         errors.attendeeName = "Please enter the name of Attendee";
         errorFlag = true;
@@ -90,11 +91,18 @@ function EventBooking() {
       if (!errorFlag) {
         let bookingObj = bookingEvent;
         bookingObj.headCount = inputVal.attendeesCount;
+        setMakePaymentFlag(true);
+        setSubmitted(false);
         dispatch(bookTickets(bookingObj));
+      } else {
+        setSubmitted(false);
       }
     }
   };
 
+  const makePayment = () => {
+    navigate('/', { replace: true });
+  };
   const addAttendee = () => {};
 
   useEffect(() => {
@@ -138,7 +146,7 @@ function EventBooking() {
 
   return (
     <React.Fragment>
-      <div className="container ">
+      <div className="container">
         <div className="row booking-container">
           <div className="col-12 col-s-12 py-20">
             <div className="booking-header">{bookingEvent.name}</div>
@@ -235,6 +243,7 @@ function EventBooking() {
                         type="number"
                         name="attendeesCount"
                         min="1"
+                        max={bookingEvent.available_tickets}
                         value={inputVal.attendeesCount}
                         onChange={handleChange}
                       />
@@ -278,6 +287,47 @@ function EventBooking() {
           </div>
         </div>
         <div className="row py-20"></div>
+      </div>
+      <div
+        className={
+          makePaymentFlag ? 'bg-overlay' : 'display-none display-s-none'
+        }
+      >
+        <div className="row makePayment-container">
+          <div className="col-12 col-s-12 py-20">
+            <div className="makepayment-header">
+              You have Booked
+              <div className="font-bold font-orange">
+                {inputVal.attendeesCount == '' ? 0 : inputVal.attendeesCount}
+              </div>
+              <span className="font-bold"> tickets </span> for
+            </div>
+          </div>
+          <div className="col-12 col-s-12 py-20">
+            <div className="row makepayment-content">
+              <div className="col-12">{bookingEvent.name}</div>
+              <div className="col-12 makepayment-date">{bookingEvent.date}</div>
+            </div>
+          </div>
+          <div className="col-12 makepayment-button">
+            <button
+              type="button"
+              className="makepayment-submit"
+              onClick={makePayment}
+            >
+              {' '}
+              Make Payment{' '}
+            </button>
+            <button
+              type="button"
+              className="makepayment-cancel"
+              onClick={(e) => setMakePaymentFlag(false)}
+            >
+              {' '}
+              Back to Booking{' '}
+            </button>
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );

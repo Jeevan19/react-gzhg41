@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { bookTickets } from '../store/eventStore';
 
 function EventCard(props) {
   let eventCard = props.data;
@@ -66,6 +63,12 @@ function EventCard(props) {
       </div>
     </div>
   );
+
+  /*<button className="btn-available"> 
+                    <a href="#" className="available_icon">  </a>
+                     Book Event 
+                </button>
+                */
 }
 
 export default EventCard;
