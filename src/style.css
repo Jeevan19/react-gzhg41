@@ -316,7 +316,7 @@ input::-webkit-input-placeholder,
   float: left;
   width: 20px;
   height: 20px;
-  left: 149px;
+  left: 130px;
   position: absolute;
   margin-top: 5px;
 }
@@ -1026,5 +1026,19 @@ input[type='number'] {
     top: 8%;
     left: 4%;
     border-radius: 10px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1450px) {
+  .body {
+    height: calc(100vh - 0px);
+  }
+
+  .btn-soldout .soldout_icon {
+    left: 115px;
+  }
+
+  .btn-available .available_icon {
+    left: 100px;
   }
 }

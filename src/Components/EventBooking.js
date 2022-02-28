@@ -11,7 +11,7 @@ function EventBooking() {
     name: '',
     email: '',
     phone: '',
-    attendeesCount: '',
+    attendeesCount: 1,
     attendeeName: '',
   });
 
