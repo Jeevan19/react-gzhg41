@@ -51,7 +51,7 @@ function Event() {
 
   const eventsSection = filteredEvents.map(function (key, index) {
     return (
-      <div className="col-4 col-m-12 col-s-12">
+      <div className="col-4 col-m-12 col-s-12 my-20">
         <EventCard data={key} key={index} />
       </div>
     );
