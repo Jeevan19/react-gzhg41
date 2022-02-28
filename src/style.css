@@ -853,6 +853,10 @@ input[type='number'] {
     left: 4%;
     border-radius: 10px;
   }
+
+  .event-y-10 {
+    margin: 0px 0px;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -1030,6 +1034,10 @@ input[type='number'] {
     top: 8%;
     left: 4%;
     border-radius: 10px;
+  }
+
+  .event-y-10 {
+    margin: 0px 0px;
   }
 }
 

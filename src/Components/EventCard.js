@@ -6,7 +6,7 @@ function EventCard(props) {
   const navigate = useNavigate();
 
   const bookEvent = () => {
-    navigate('./event/' + eventCard.id + '/booking', { replace: true });
+    navigate('./event/' + eventCard.id);
   };
 
   return (

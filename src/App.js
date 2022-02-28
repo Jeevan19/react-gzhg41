@@ -10,7 +10,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/event" element={<Event />} />
-          <Route path="/event/:id/booking" exact element={<EventBooking />} />
+          <Route path="/event/:id" exact element={<EventBooking />} />
           <Route path="/" element={<Event />} />
           <Route path="*" element={<Event />} />
         </Routes>

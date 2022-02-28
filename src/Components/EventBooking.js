@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router';
 
-import { bookTickets } from '../store/eventStore';
+import { getEventsList } from '../Service/eventsServices';
+import { bookTickets, addEvents } from '../store/eventStore';
 
 function EventBooking() {
   const [submitted, setSubmitted] = useState(false);
@@ -29,6 +30,7 @@ function EventBooking() {
   let attendeeArr = [];
   let addAttendeesSec = '';
   const [addAttendees, setAddAttendees] = useState('');
+  const [eventCallFlag, setEventCallFlag] = useState(true);
 
   //const bookingEvent = useSelector((state) => state.find(state.id === id));
   const events = useSelector((state) => state);
@@ -39,8 +41,23 @@ function EventBooking() {
     })[0];
 
   useEffect(() => {
+    fetchEventList();
     checkValidation();
   }, [inputVal, submitted]);
+
+  const fetchEventList = () => {
+    if (events.length == 0 && eventCallFlag) {
+      getEventsList()
+        .then((data) => {
+          dispatch(addEvents(data));
+          events = data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      setEventCallFlag(false);
+    }
+  };
 
   const checkValidation = () => {
     let errorFlag = false;
