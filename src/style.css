@@ -552,6 +552,10 @@ input[type='number'] {
   margin: 20px 20px;
 }
 
+.event-y-10 {
+  margin: 10px 0px;
+}
+
 @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
   .logo {
     width: 150px;
@@ -1040,5 +1044,8 @@ input[type='number'] {
 
   .btn-available .available_icon {
     left: 100px;
+  }
+  .event-y-10 {
+    margin: 10px 0px;
   }
 }
